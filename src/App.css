@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  background-color: #111524;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  width: 85%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-size: 2em;
+}
+
+#search-bar {
+  background-color: #171f38;
+  width: 85vw;
+  height: 3em;
+  margin-top: 1em;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  padding: 0 1em 0 1em;
+}
+
+#search-icon {
+  color: "#0C59DB";
+}
+
+#search-icon > * {
+  color: #0e60e8;
+}
+
+#search-box {
+  background: transparent;
+  border: none;
+  padding-left: 0.5em;
+  margin-left: 0.5em;
+  width: 100%;
+  font-size: 1em;
+}
+
+#search-box:focus {
+  outline: none;
+}
+
+#result {
+  border-radius: 1em;
+  margin-top: 1.5em;
+  background-color: #171f38;
+  width: 85%;
+  height: 60vh;
+}
+
+#main-info {
+  display: flex;
+  padding: 2em 1em 0 1.5em;
+  height: 8.5em;
+}
+
+#profile-picture {
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+}
+
+#main-info-side > * {
+  margin: 0;
+}
+
+#main-info-side {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  height: 100%;
+  padding: 0.3em 0 0 0.3em;
+}
+
+#name {
+  font-size: 1.5em;
+}
+
+#github-link > a {
+  text-decoration: none;
+  color: #0e60e8;
+}
+
+#github-link {
+  margin-bottom: 1em;
+  transform: translateY(-0.5em);
 }
