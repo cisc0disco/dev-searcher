@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --search-color: #0e60e8;
+}
 
 body {
   background-color: #111524;
@@ -19,6 +23,7 @@ body {
 
 nav {
   width: 85%;
+  height: 10em;
 }
 
 h2 {
@@ -28,7 +33,7 @@ h2 {
 #search-bar {
   background-color: #171f38;
   width: 85vw;
-  height: 3em;
+  min-height: 3em;
   margin-top: 1em;
   border-radius: 1em;
   display: flex;
@@ -36,12 +41,8 @@ h2 {
   padding: 0 1em 0 1em;
 }
 
-#search-icon {
-  color: "#0C59DB";
-}
-
 #search-icon > * {
-  color: #0e60e8;
+  color: var(--search-color);
 }
 
 #search-box {
@@ -62,18 +63,22 @@ h2 {
   margin-top: 1.5em;
   background-color: #171f38;
   width: 85%;
-  height: 60vh;
+  min-height: 30em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-info {
   display: flex;
   padding: 2em 1em 0 1.5em;
-  height: 8.5em;
+  height: 7em;
+  width: 100%;
 }
 
 #profile-picture {
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
 }
 
@@ -84,13 +89,15 @@ h2 {
 #main-info-side {
   display: flex;
   flex-direction: column;
-  margin-left: 1em;
-  height: 100%;
-  padding: 0.3em 0 0 0.3em;
+  margin-left: 1.4em;
+  height: 95%;
+  padding: 0.3em 0 0 0;
+  justify-content: space-between;
 }
 
 #name {
-  font-size: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 #github-link > a {
@@ -99,6 +106,103 @@ h2 {
 }
 
 #github-link {
-  margin-bottom: 1em;
-  transform: translateY(-0.5em);
+  /* transform: translateY(-0.5em); */
+  font-size: 0.7em;
+}
+
+#joined-date {
+  font-size: 0.8em;
+}
+
+#bio-container {
+  display: flex;
+  width: 95%;
+  max-height: 8em;
+  padding: 0 1.5em 0 1.5em;
+  font-size: 0.8em;
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+#bio-text {
+  white-space: normal;
+  font-size: 1.2em;
+}
+
+#data-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 5.5em;
+  background-color: #111524;
+  border-radius: 1em;
+}
+
+#data-titles {
+  display: flex;
+  justify-content: center;
+  height: 2em;
+  width: 80%;
+}
+
+#data-titles > * {
+  font-size: 0.75em;
+  margin-left: 1.4em;
+  margin-right: 1.4em;
+  font-weight: 300;
+}
+
+#data-numbers {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 1.5em 0 1.5em;
+}
+
+#data-numbers > * {
+  font-size: 0.75em;
+  margin: 0.5em 1.5em 0 1.2em;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+#brands {
+  margin-top: 1.5em;
+  justify-content: left;
+  width: 80%;
+}
+
+#brands > h4 > svg {
+  width: 1em;
+  margin-right: 1.5em;
+}
+
+#brands > h4 {
+  margin: 0.7em auto;
+  display: flex;
+  align-items: center;
+}
+
+#brands > h4 > p {
+  margin: 0;
+  font-weight: 300;
+}
+
+.grayedOut {
+  color: gray;
+}
+
+@keyframes loadingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingRotation {
+  animation: loadingSpin 1.5s linear infinite;
 }
