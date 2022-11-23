@@ -102,69 +102,80 @@ function App() {
           onChange={(e) => setInputValue(e.target.value)}
         />
       </div>
-      <div id="result">
-        <div id="main-info">
-          <img id="profile-picture" src={userInfo.avatar_url} alt="profile" />
-          <div id="main-info-side">
-            <p id="name">{userInfo.name}</p>
-            <p id="github-link">
-              <a href={userInfo.html_url}>@{userInfo.login}</a>
-            </p>
-            <p id="joined-date">
-              Joined {date.getDate()}{" "}
-              {date.toLocaleString("en-us", { month: "short" })}{" "}
-              {date.getFullYear()}
-            </p>
+      {userInfo.login !== "" ? (
+        <div id="result">
+          <div id="main-info">
+            <img id="profile-picture" src={userInfo.avatar_url} alt="profile" />
+            <div id="main-info-side">
+              <p id="name">{userInfo.name}</p>
+              <p id="github-link">
+                <a href={userInfo.html_url}>@{userInfo.login}</a>
+              </p>
+              <p id="joined-date">
+                Joined {date.getDate()}{" "}
+                {date.toLocaleString("en-us", { month: "short" })}{" "}
+                {date.getFullYear()}
+              </p>
+            </div>
           </div>
-        </div>
-        <div id="bio-container">
-          <p id="bio-text" className={userInfo.bio === null ? "grayedOut" : ""}>
-            {userInfo.bio === null ? "The profile has no bio" : userInfo.bio}
-          </p>
-        </div>
-        <div id="data-container">
-          <div id="data-titles">
-            <p>Repos</p>
-            <p>Followers</p>
-            <p>Following</p>
-          </div>
-          <div id="data-numbers">
-            <p>{userInfo.public_repos?.toString()}</p>
-            <p>{userInfo.followers?.toString()}</p>
-            <p>{userInfo.following?.toString()}</p>
-          </div>
-        </div>
-        <div id="brands">
-          <h4>
-            <FontAwesomeIcon icon={"location-dot"}></FontAwesomeIcon>
-            <p className={userInfo.location === null ? "grayedOut" : ""}>
-              {userInfo.location === null ? "Not Available" : userInfo.location}
-            </p>
-          </h4>
-          <h4>
-            <FontAwesomeIcon icon={"link"}></FontAwesomeIcon>
-            <p className={userInfo.blog === "" ? "grayedOut" : ""}>
-              {userInfo.blog === "" ? "Not Available" : userInfo.blog}
-            </p>
-          </h4>
-          <h4>
-            <FontAwesomeIcon icon={faTwitter} />
+          <div id="bio-container">
             <p
-              className={userInfo.twitter_username === null ? "grayedOut" : ""}
+              id="bio-text"
+              className={userInfo.bio === null ? "grayedOut" : ""}
             >
-              {userInfo.twitter_username === null
-                ? "Not Available"
-                : userInfo.twitter_username}
+              {userInfo.bio === null ? "The profile has no bio" : userInfo.bio}
             </p>
-          </h4>
-          <h4>
-            <FontAwesomeIcon icon="building"></FontAwesomeIcon>
-            <p className={userInfo.company === null ? "grayedOut" : ""}>
-              {userInfo.company === null ? "Not Available" : userInfo.company}
-            </p>
-          </h4>
+          </div>
+          <div id="data-container">
+            <div id="data-titles">
+              <p>Repos</p>
+              <p>Followers</p>
+              <p>Following</p>
+            </div>
+            <div id="data-numbers">
+              <p>{userInfo.public_repos?.toString()}</p>
+              <p>{userInfo.followers?.toString()}</p>
+              <p>{userInfo.following?.toString()}</p>
+            </div>
+          </div>
+          <div id="brands">
+            <h4>
+              <FontAwesomeIcon icon={"location-dot"}></FontAwesomeIcon>
+              <p className={userInfo.location === null ? "grayedOut" : ""}>
+                {userInfo.location === null
+                  ? "Not Available"
+                  : userInfo.location}
+              </p>
+            </h4>
+            <h4>
+              <FontAwesomeIcon icon={"link"}></FontAwesomeIcon>
+              <p className={userInfo.blog === "" ? "grayedOut" : ""}>
+                {userInfo.blog === "" ? "Not Available" : userInfo.blog}
+              </p>
+            </h4>
+            <h4>
+              <FontAwesomeIcon icon={faTwitter} />
+              <p
+                className={
+                  userInfo.twitter_username === null ? "grayedOut" : ""
+                }
+              >
+                {userInfo.twitter_username === null
+                  ? "Not Available"
+                  : userInfo.twitter_username}
+              </p>
+            </h4>
+            <h4>
+              <FontAwesomeIcon icon="building"></FontAwesomeIcon>
+              <p className={userInfo.company === null ? "grayedOut" : ""}>
+                {userInfo.company === null ? "Not Available" : userInfo.company}
+              </p>
+            </h4>
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

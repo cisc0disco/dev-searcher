@@ -23,7 +23,8 @@ body {
 
 nav {
   width: 85%;
-  height: 10em;
+  max-width: 40em;
+  height: 6em;
 }
 
 h2 {
@@ -33,6 +34,7 @@ h2 {
 #search-bar {
   background-color: #171f38;
   width: 85vw;
+  max-width: 40em;
   min-height: 3em;
   margin-top: 1em;
   border-radius: 1em;
@@ -62,11 +64,13 @@ h2 {
   border-radius: 1em;
   margin-top: 1.5em;
   background-color: #171f38;
-  width: 85%;
-  min-height: 30em;
+  width: 85vw;
+  max-width: 40em;
+  min-height: 32em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: flex;
 }
 
 #main-info {
@@ -106,7 +110,6 @@ h2 {
 }
 
 #github-link {
-  /* transform: translateY(-0.5em); */
   font-size: 0.7em;
 }
 
@@ -149,8 +152,8 @@ h2 {
 
 #data-titles > * {
   font-size: 0.75em;
-  margin-left: 1.4em;
-  margin-right: 1.4em;
+  margin-left: 7%;
+  margin-right: 7%;
   font-weight: 300;
 }
 
@@ -163,7 +166,7 @@ h2 {
 
 #data-numbers > * {
   font-size: 0.75em;
-  margin: 0.5em 1.5em 0 1.2em;
+  margin: 0.5em 7.5% 0 7.5%;
   font-weight: 600;
   font-size: 1.25em;
 }
@@ -205,4 +208,50 @@ h2 {
 
 .loadingRotation {
   animation: loadingSpin 1.5s linear infinite;
+}
+
+@media only screen and (min-width: 600px) {
+
+  #bio-container {
+    justify-content: center;
+  }
+
+  #main-info {
+    margin-top: 0.2em;
+    padding-left: 0;
+    justify-content: center;
+    margin-bottom: 3em;
+  }
+
+  #name {
+    font-size: 2em;
+  }
+
+  #github-link {
+    font-size: 1.2em;
+  }
+
+  #joined-date {
+    margin-top: 0.4em;
+    font-size: 1em;
+  }
+
+  #result {
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 62%;
+  }
+
+  #data-container {
+    width: 23em;
+  }
+
+  #profile-picture {
+    height: 7em;
+    width: 7em;
+  }
+
+  #brands {
+    width: 50%
+  }
 }
